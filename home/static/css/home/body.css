@@ -1,0 +1,104 @@
+#blocks{
+    position: relative;
+    width: 1200px;
+    height: 450px;
+    margin-top: 35px;
+    background: #FFFFFF;
+    box-shadow: 2px 4px 8px 4px rgba(0, 0, 0, 0.15);
+    text-decoration: none;
+    color: black;
+}
+
+
+
+#blocks:hover {
+    background-color: whitesmoke;
+}
+.bodyimageboxR{
+    position: absolute;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    right: 0;
+    justify-content: center;
+}
+.bodytextboxR{
+    position: relative;
+    display: flex;
+    width: 45%;
+    height: 100%;
+    left: 0;
+    justify-content: center;
+    margin-left: 5%;
+}
+
+.bodyimageboxL{
+    position: absolute;
+    display: flex;
+    width: 50%;
+    height: 100%;
+    left: 0;
+    justify-content: center;
+}
+.bodytextboxL{
+    position: absolute;
+    display: flex;
+    width: 45%;
+    margin-right: 5%;
+    height: 100%;
+    right: 0;
+    justify-content: center;
+}
+.bodyimage{
+    align-self: center;
+    width: 330px;
+    height: 330px;
+}
+
+
+.bodytitle{
+    
+    margin-left: 5%;
+    width: 80%;
+    position: absolute;
+    font-size: 35px;
+    top: 30%;
+}
+
+.bodybody{    
+    width: 80%;
+    margin-left: 5%;
+    position: absolute;
+    font-size: 20px;
+    bottom: 35%;
+}
+
+
+
+
+  
+@media screen and (min-width: 1050px) and (max-width: 1750px) {
+    #blocks{
+        width: 1000px;
+        height: 400px;
+    }
+
+}
+@media screen and (max-width: 1050px){
+    #blocks{
+        width: 750px;
+        height: 300px;
+    }    
+    .bodyimage{
+        align-self: center;
+        width: 250px;
+        height: 250px;
+    }
+    .bodytitle{
+        font-size: 25px;
+    }
+    .bodybody{
+        font-size: 15px;
+    }
+    
+}

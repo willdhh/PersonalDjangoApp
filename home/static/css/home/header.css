@@ -1,0 +1,102 @@
+::-webkit-scrollbar {
+    display: none;
+}
+
+#headerbar {
+    display: inline-flex;
+    width: 100%;
+    height: 125px;
+    margin: auto;
+    justify-content: center;
+    background: black;
+}
+
+.header {
+    position: relative;
+    width: calc(100% - 320px);
+    margin-bottom: 40px;
+    margin-top: 45px;
+}
+
+.headerlink {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 40px;
+    position: absolute;
+    display: flex;
+    text-decoration: none;
+    color: white;
+}
+
+.links {
+    float: right;
+    position: absolute;
+    display: inline-flex;
+    bottom: 0;
+    right: 0;
+}
+
+.links a {
+    text-decoration: none;
+    color: white;
+}
+
+.links a :hover {
+    font-size: 20px;
+    font-weight: bolder;
+}
+
+.indlink {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 26px;
+    margin-left: 40px;
+}
+
+#bodyblocks {
+    display: block;
+    margin: 0;
+    margin-bottom: 100px;
+    min-height: 80vh;
+}
+
+body {
+    font-family: sans-serif !important;
+    font-style: normal!important;
+    margin: 0;
+    min-height: 80vh;
+}
+
+#flex {
+    display: flex;
+    justify-content: center;
+    width: inherit;
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1320px) {
+    .header {
+        width: 1000px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #headerbar {
+        height: 75px;
+    }
+    .header {
+        width: 80%;
+        margin-top: 25px;
+        margin-bottom: 20px;
+    }
+    .headerlink {
+        font-size: 20px;
+        line-height: 20px;
+    }
+    .indlink {
+        font-size: 10px;
+    }
+    .links a :hover {
+        font-size: 10px;
+        font-weight: bolder;
+    }
+}

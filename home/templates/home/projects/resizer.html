@@ -1,0 +1,45 @@
+{% extends "home/projects/projects.html" %} 
+
+{% block more_css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projects/resizer.css' %}"> 
+{% endblock %}
+
+
+
+{% block projectintrocontent %}
+{{project | urlize | linebreaks}}
+{% endblock %} 
+
+
+{% block bodycontent %}
+{% if resizer %}
+<div id = "cont">
+<div id="box2">
+    <div class = "top" onmousedown= "topResize(this)" ></div>
+    <div class = "left"  onmousedown= "leftResize(this)" ></div>
+    <div class = "right" onmousedown= "rightResize(this)" ></div>
+    <div class = "bottom" onmousedown= "bottomResize(this)" ></div>
+    <label class = "width">
+        <span class = "titlewh" >Width:</span>
+        <input class = "widthinput" type = "number" onchange = "resetWidth(this)" value = 300>
+    </label>
+    <label class = "height">
+        <span class = "titlewh">  Height:</span>
+        <input class = "heightinput" type = "number" onchange = "resetHeight(this)" value = 300>
+    </label>
+    <label class = "topPos">
+        <span class = "titletl">  Top: </span>
+        <input class = "topPosinput" type = "number" onchange = "resetTop(this)" value = 0 >
+    </label>
+    <label class = "leftPos">
+        <span class = "titletl">  Left: </span>
+        <input class = "leftPosinput" type = "number" onchange = "resetLeft(this)" value = 0>
+    </label>
+    <div class = 'mover' onmousedown= "moveElem(this)" >
+    </div>
+</div>
+</div>
+
+{% endif %}
+{% endblock %} 

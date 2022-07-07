@@ -1,0 +1,72 @@
+{% extends "home/about/about.html" %}
+
+{% block moreextra_css %}
+
+    {% load static %}
+    
+    <link rel="stylesheet" type="text/css" href="{% static 'css/experiences/experiences.css' %}"> 
+{% endblock %}
+
+{% block introcontent %}
+    <div id = "flex">
+        <div id="intro">
+            <div class="introbox">
+                <img class="introimage" src= "https://storage.googleapis.com/portfolio-webapp-353814_djangotestbucket/{{intro.introphoto}}" > 
+            </div>
+            <div class="introboxtext">
+                <div class="introtextarea">
+                    <div class="introtitle">
+                        {{intro.quick_intro | urlize}}
+                        <div id = "resumesection">
+                            <button id="resumeview">View Résumé</button>
+                                <button id="resumebutton">
+                                    <a class = "button" href= {% static "images/home/DonghyukHwangResume.pdf" %} download>
+                                        Download Résumé
+                                    </a>
+                                </button>                           
+                                </div>
+                                <div id="resume" class="modal">
+                                    <div class="modal-content">
+                                        <span class="close">&times;</span>
+                                        <div class = "resumecontainer">
+                                        <img class = "contentview"  src=  {% static "images/home/DonghyukHwangResume.jpg" %}>
+                                        </div>
+                                    </div>                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %} 
+
+{% block bodycontent %}
+
+    {% for item in body %}
+    <div id = "cont">
+    <div id = "flex">
+        <div id="blocks">
+            <div class="bodytitle">
+                {{item.exptitle}}
+                <div class="bodyduration">{{item.expduration}}</div>
+                {{item.exptext_set.all}}
+            </div>
+        </div>
+    </div>
+    <div id = "flex">
+        <div id="blocks">
+                {% for text in item.expbody_set.all %}
+                    <div class = "expbody">
+                        {{text.expbody | urlize | linebreaks}}
+                        {% if forloop.counter|divisibleby:2 %}
+                        <br>
+                        {% endif %}
+                    </div>
+                {% endfor %}            
+        </div>
+    </div>
+</div>
+    {% endfor %} 
+
+{% endblock %} 
+

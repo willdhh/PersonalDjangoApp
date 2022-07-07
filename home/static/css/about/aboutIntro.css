@@ -1,0 +1,110 @@
+#intro {
+    width: 1120px;
+    height: 450px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.introbox {
+    width: 450px;
+    height: 450px;
+}
+
+.introboxtext {
+    width: 60%;
+    height: inherit;
+}
+
+.introtextarea {
+    display: flex;
+    justify-content: center;
+}
+
+.introimage {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.introtitle {
+    font-size: 40px;
+    white-space: nowrap;
+}
+
+.sectiontitle {
+    width: 920px;
+    height: auto;
+    margin: 0;
+    font-size: 40px;
+}
+
+#blocks {
+    display: inline-block;
+    width: 920px;
+    height: auto;
+    margin: 0;
+    margin-top: 50px;
+    vertical-align: middle;
+    box-shadow: none;
+    border-left: 1px solid black;
+    margin-bottom: 100px;
+}
+
+.bodytextbox {
+    float: right;
+    height: 100%;
+    width: 90%;
+    margin: 0;
+    color: black;
+    margin: 0;
+    line-height: 24px;
+}
+
+#blocks:hover {
+    background-color: transparent;
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1750px) {
+    #intro {
+        width: 1000px;
+        height: 400px;
+    }
+    .introbox {
+        width: 400px;
+        height: 400px;
+    }
+    .introtextarea {
+        margin: 0;
+        margin-left: 30px;
+        display: inline-grid;
+        align-items: center;
+    }
+    #blocks {
+        width: 800px;
+    }
+    .sectiontitle {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #intro {
+        margin-bottom: 50px;
+        height: auto;
+    }
+    .introboxtext {
+        width: 600px;
+    }
+    .introtitle {
+        margin-top: 20px;
+        font-size: 30px;
+    }
+    #blocks {
+        width: 600px;
+    }
+    .sectiontitle {
+        width: 600px;
+    }
+}

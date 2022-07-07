@@ -1,0 +1,27 @@
+
+.footerbox{
+    display: flex;
+    justify-content: center;
+}
+
+.footerbox > * {
+    margin: 0 5px 50px 5px;
+}
+
+.linkedin{
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+}
+
+.github{
+    width: 40px;
+    height: 40px;
+}
+
+.email{
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+}
+    

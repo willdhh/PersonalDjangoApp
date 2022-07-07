@@ -1,0 +1,203 @@
+#intro {
+    width: 1720px;
+    height: 630px;
+    margin-top: 150px;
+    margin-bottom: 150px;
+    position: relative;
+    background: #FFFFFF;
+}
+
+.introbox {
+    position: absolute;
+    width: 50%;
+    height: inherit;
+    margin: 0;
+}
+
+.introboxtext {
+    position: absolute;
+    width: 50%;
+    height: inherit;
+    margin: 0;
+    right: 0;
+    display: grid;
+    align-items: center;
+}
+
+.introimage {
+    width: 740px;
+    height: 630px;
+    display: inline-block;
+}
+
+.introtextarea {
+    margin: 60px;
+    display: inline-grid;
+    align-items: center;
+}
+
+.introtitle {
+    display: block;
+    margin: 0;
+    font-size: 50px;
+}
+
+.introbody {
+    position: relative;
+    margin-top: 50px;
+    display: block;
+    font-size: 20px;
+}
+
+#resumesection {
+    display: flex;
+}
+
+#resumeview {
+    margin-left: 10px;
+    align-self: center;
+}
+
+#resumebutton {
+    margin-left: 10px;
+    align-self: center;
+}
+
+.button {
+    text-decoration: none;
+    color: black;
+    font: inherit;
+    height: fit-content;
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+.modal-content {
+    position: relative;
+    width: 60vw;
+    background-color: #fefefe;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 100px;
+    padding: 20px;
+    border: 1px solid #888;
+}
+
+.contentview {
+    max-width: fit-content;
+    width: 50vw;
+    height: fit-content;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.resumecontainer {
+    display: flex;
+    justify-content: center;
+    left: 10%;
+    top: 50px;
+    width: 80%;
+    margin: auto;
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1750px) {
+    #intro {
+        width: 1000px;
+        height: 450px;
+    }
+    .introimage {
+        width: 450px;
+        height: 450px;
+    }
+    .introtextarea {
+        margin: 0;
+        margin-left: 30px;
+        display: inline-grid;
+        align-items: center;
+    }
+    .introtitle {
+        margin-top: 20px;
+        font-size: 40px;
+    }
+    .introbody {
+        margin-top: 25px;
+        font-size: 17px;
+    }
+    #resumesection {
+        top: 60%;
+        left: 52%;
+    }
+    #resumebutton {
+        font-size: 12px;
+    }
+    #resumeview {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #intro {
+        margin-top: 100px;
+        margin-bottom: 100px;
+        display: inline-flex;
+        height: auto;
+        width: 100%;
+        justify-content: center;
+    }
+    .introbox {
+        display: flex;
+        justify-content: center;
+    }
+    .introimage {
+        width: 450px;
+        height: 450px;
+        display: inline-block;
+    }
+    .introboxtext {
+        width: 650px;
+        position: relative;
+        margin: 0;
+        margin-top: 450px;
+    }
+    .introtextarea {
+        margin: 0;
+    }
+    .introtitle {
+        margin-top: 75px;
+        font-size: 30px;
+    }
+    .introbody {
+        margin-top: 15px;
+    }
+}

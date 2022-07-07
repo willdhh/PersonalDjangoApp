@@ -1,0 +1,178 @@
+#intro {
+    width: 1120px;
+    height: 400px;
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 150px;
+}
+
+.introbox {
+    width: 400px;
+    height: 400px;
+}
+
+.introimage {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.introboxtext {
+    width: 720px;
+    height: 400px;
+}
+
+.introtextarea {
+    width: fit-content;
+    margin-right: 0px;
+    align-items: center;
+}
+
+.introtitle {
+    float: right;
+    width: auto;
+    margin: 0;
+    font-size: 35px;
+}
+
+#cont {
+    margin-bottom: 100px;
+}
+
+#blocks {
+    margin: 0;
+    height: inherit;
+    position: relative;
+    display: inline;
+    box-shadow: none;
+    justify-content: center;
+    border: 0 solid white;
+}
+
+#blocks:hover {
+    background-color: transparent;
+}
+
+.bodytitle {
+    position: inherit;
+    top: 0;
+    margin: 0;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.bodyduration {
+    font-size: 20px;
+    display: contents;
+}
+
+.expbody {
+    margin: 0;
+    margin-left: 50px;
+    margin-top: 20px;
+    line-height: 24px;
+}
+
+#resumesection {
+    margin-top: 20px;
+    width: inherit;
+    justify-content: center;
+}
+
+#resumeview {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 35px;
+    width: 40%;
+    font-size: 18px;
+}
+
+#resumebutton {
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 35px;
+    width: 40%;
+    font-size: 18px;
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1750px) {
+    #intro {
+        width: 1000px;
+        height: 400px;
+    }
+    .introbox {
+        width: 400px;
+        height: 400px;
+    }
+    .introboxtext {
+        width: 600px;
+        height: 400px;
+    }
+    .introtitle {
+        font-size: 20px;
+    }
+    #blocks {
+        width: 800px;
+    }
+    .sectiontitle {
+        width: 800px;
+    }
+    #resumebutton {
+        height: 30px;
+        width: fit-content;
+        font-size: 15px;
+    }
+    #resumeview {
+        height: 30px;
+        width: fit-content;
+        font-size: 15px;
+    }
+    .bodytitle {
+        font-size: 30px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #intro {
+        height: auto;
+        margin-bottom: 50px;
+    }
+    .introboxtext {
+        width: 600px;
+        height: auto;
+    }
+    .introtitle {
+        font-size: 30px;
+    }
+    #blocks {
+        width: 600px;
+    }
+    .sectiontitle {
+        width: 600px;
+    }
+    .bodytitle {
+        font-size: 30px;
+    }
+    .bodyduration {
+        font-size: 15px;
+    }
+    .expbody {
+        font-size: 20px;
+    }
+    #cont {
+        margin-bottom: 50px;
+    }
+    #resumeview {
+        height: 20px;
+        width: 40%;
+        font-size: 15px;
+    }
+    #resumebutton {
+        height: 20px;
+        width: 40%;
+        font-size: 15px;
+    }
+    .bodytitle {
+        font-size: 25px;
+    }
+}

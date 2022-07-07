@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+{% load static %}
+
+<head>
+     
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home/intro.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home/body.css' %}"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home/footer.css' %}"> 
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> 
+    
+    {% block extra_css %}{% endblock %}    
+</head>
+
+
+<body>
+    {% block header %}
+        <div id="headerbar">
+            <div class="header">
+                <a  href= "/"><div class = "headerlink">{{websitetitle.title_text}}</div></a>
+            
+                <div class="links">
+                    {% for item in HomePageIndex.all %}
+                        <a href="/{{ item.link_text }}/">
+                            {% if forloop.counter == pk %}   
+                                <div class = "indlink" style=" font-weight: bolder;" >
+                                    {{item.title_text}}
+                                </div>
+                            {% else %}
+                                <div class = "indlink">
+                                    {{item.title_text}}
+                                </div>
+                            {% endif %}
+                        </a>
+                    {% endfor %} 
+                </div>
+            </div>
+        </div>
+    {% endblock %} 
+
+    {% block body %}
+        <div id="bodyblocks">
+                
+            {% block introcontent %}
+                <div id="flex">
+                    <div id="intro">
+                        <div class="introbox">
+                            <img class="introimage" src="https://storage.googleapis.com/portfolio-webapp-353814_djangotestbucket/{{intro.introphoto}}">
+                        </div>
+                        <div class="introboxtext">
+                            <div class="introtextarea">
+                                <div class="introtitle">
+                                {{intro.quick_intro}}
+                                </div>
+                                <div class="introbody">
+                                {% for item in intro.intro_set.all %} 
+                                
+                                    {% if forloop.counter == 3 %}
+
+                                        <div id="resumesection">
+                                            {{item.intro | urlize | linebreaks}}
+                                            <button id="resumeview">View Résumé</button>
+                                            <button id="resumebutton">
+                                            <a class = "button" href= {% static "images/home/DonghyukHwangResume.pdf" %} download> Download Résumé </a>
+                                            </button>
+                                        </div>
+                                        <div id="resume" class="modal">
+                                            <div class="modal-content">
+                                                <span class="close">&times;</span>
+                                                <div class="resumecontainer">
+                                                    <img class="contentview" src={% static "images/home/DonghyukHwangResume.jpg" %}>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    {% else %}
+                                        {{item.intro | urlize | linebreaks}} 
+                                    {% endif %}
+
+                                {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endblock %} 
+
+            {% block bodycontent %}
+
+                {% for item in HomePageIndex.all %} 
+
+                    {% if forloop.counter|divisibleby:2 %}
+
+                        <div id="flex">
+                            <a id="blocks" href="/{{ item.link_text }}/">
+                                <div class="bodyimageboxR">
+                                    <img class="bodyimage" src="https://storage.googleapis.com/portfolio-webapp-353814_djangotestbucket/{{item.introphoto}}">
+                                </div>
+                                <div class="bodytextboxR">
+                                    <div class="bodytitle"> {{ item.title_text }} </div>
+                                    <div class="bodybody"> {{item.intro_set.first}} </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    {% else %}
+
+                        <div id="flex">
+                            <a id="blocks" href="/{{ item.link_text }}/">
+                                <div class="bodyimageboxL">
+                                    <img class="bodyimage" src="https://storage.googleapis.com/portfolio-webapp-353814_djangotestbucket/{{item.introphoto}}">
+                                </div>
+                                <div class="bodytextboxL">
+                                    <div class="bodytitle"> {{ item.title_text }} </div>
+                                    <div class="bodybody"> {{item.intro_set.first}} </div>
+                                </div>
+                            </a>
+                        </div>
+
+                    {% endif %} 
+
+                {% endfor %}
+
+            {% endblock %}
+
+        </div>
+    {% endblock %} 
+
+    {% block footer %}
+        <footer>
+            <div class = footerbox>
+                <a href = "https://www.linkedin.com/in/donghyuk-will-hwang-6032bb193/" target="_blank">
+                    <img class = linkedin src="{% static "images/home/linkedin.png" %}">
+                </a>
+                <a href = "https://github.com/willdhh" target="_blank">
+                    <img class = github src="{% static "images/home/github.png" %}">
+                </a>
+                <a href = {% url 'contacts'%}>
+                    <img class = email src="{% static "images/home/email.png" %}">
+                </a>
+            </div>
+        </footer>
+    {% endblock %} 
+    
+    <script  type="text/javascript" src="{% static "scripts/detatch.js" %}"></script>
+    <script  type="text/javascript" src="{% static "scripts/modal.js" %}"></script>
+    {% block scripts %}{% endblock %} 
+</body>

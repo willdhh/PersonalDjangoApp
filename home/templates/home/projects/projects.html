@@ -1,0 +1,41 @@
+{% extends "home/homepage.html" %}
+
+
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/projects/projects.css' %}"> 
+
+{% block more_css %}{% endblock %}
+{% endblock %}
+
+{% block introcontent %}
+    <div id="flex">
+    <div id="intro">
+        <div class="introtext">
+            {% block projectintrocontent %}
+            {{intro.quick_intro | urlize | linebreaks}}
+            {% endblock %} 
+        </div>
+    </div>
+</div>
+{% endblock %} 
+
+{% block bodycontent %}
+    
+    {% for item in projects %}
+    <div id="flex">
+        <a id="blocks" href={% url 'projectsdet' item.project_link %}>                    
+            <div class="bodytextbox">
+                <div class="bodytitle">
+                    {{ item.project_title }}
+                </div>
+                <div class="bodybody">
+                    {{ item.project_description | urlize | linebreaks}}
+                </div>
+            </div>
+        </a>
+    </div>
+    {% endfor %} 
+{% endblock %} 
+

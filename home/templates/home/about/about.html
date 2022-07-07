@@ -1,0 +1,48 @@
+{% extends "home/homepage.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about/aboutIntro.css' %}"> 
+{% block moreextra_css %}{% endblock %}
+{% endblock %}
+
+{% block introcontent %}
+
+    <div id = "flex">
+        <div id="intro">
+            <div class="introbox">
+                <img class="introimage" src= "https://storage.googleapis.com/portfolio-webapp-353814_djangotestbucket/{{intro.introphoto}}" >   
+            </div>
+            <div class="introboxtext">
+                <div class="introtextarea">
+                    <div class="introtitle">
+                        {{intro.quick_intro | urlize | linebreaks}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %} 
+
+{% block bodycontent %}
+    {% for item in body %}
+    <div id = "flex">
+        <div class = "sectiontitle">
+            {{item.section_title}}
+        </div>
+    </div>
+    <div id = "flex">
+        <div id="blocks">
+            <div class="bodytextbox">
+                {% block text %}
+                <div class="textbox">
+                    
+                    {{item.bodytext}}
+                </div>
+                    {% endblock %} 
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+{% endblock %} 
+

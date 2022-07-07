@@ -1,0 +1,71 @@
+{% extends "home/homepage.html" %}
+
+{% block extra_css %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/contacts/contacts.css' %}"> 
+{% endblock %}
+
+{% block introcontent %}
+    <div id="flex">
+        <div id="intro">
+            <div class="introbody">
+                {{intro.quick_intro | urlize | linebreaks}}
+            </div>
+        </div>
+    </div>
+{% endblock %} 
+
+{% block bodycontent %}
+<div id = "flex">
+    <form method="post" id="blocks">
+       {% csrf_token %}
+       <div id = "flex">
+          <div class = "form">
+             <div class = "formlabel">Subject: </div>
+             <div class = "forminput">
+                {{form.subject}}
+             </div>
+          </div>
+       </div>
+       
+       <div id = "flex">
+            <div class = "form">
+                <div class = "formlabel">
+                    Your Name: 
+                </div>
+                <div class = "forminput">
+                    {{form.sender}} 
+                </div>
+            </div>
+        </div>
+       
+       <div id = "flex">
+            <div class = "form">
+                <div class = "formlabel">
+                    Words of Wisdom: 
+                </div>
+                    <div class = "forminputmessage">
+                        {{form.message}}
+                    </div>
+                </div>
+        </div>
+       
+       <div id = "flex">
+       <div class = "form">
+          <div class = "formlabel">
+             Your Contact Info: 
+          </div>
+          <div class = "forminput">
+             {{form.yourcontact}}
+          </div>
+       </div>
+    </div>
+       
+       <div class="form-actions">
+          <button type="submit" class = "button">Send</button>
+       </div>
+ </div>
+ </form>
+ </div>
+{% endblock %} 
+

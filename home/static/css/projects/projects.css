@@ -1,0 +1,80 @@
+#intro {
+    width: 920px;
+    height: fit-content;
+    margin: 0;
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.introtext {
+    margin: 0;
+    display: inline-grid;
+    font-size: 20px;
+}
+
+#blocks {
+    display: inline-block;
+    width: 920px;
+    height: 350px;
+    margin-left: calc((100% - 920px)/2);
+    margin-right: calc((100% - 920px)/2);
+    vertical-align: middle;
+    position: relative;
+}
+
+.bodytextbox {
+    height: inherit;
+    width: inherit;
+    position: relative;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.bodytitle {
+    padding: 0;
+    width: auto;
+    display: block;
+    margin-left: 0;
+    position: absolute;
+    top: 25%;
+}
+
+.bodybody {
+    position: absolute;
+    margin: 0;
+    margin-left: 0;
+    top: 40%;
+}
+
+@media screen and (min-width: 1050px) and (max-width: 1750px) {
+    #intro {
+        width: 800px;
+        margin-bottom: 50px;
+    }
+    .introtitle {
+        font-size: 30px;
+    }
+    #blocks {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    #intro {
+        width: 600px;
+        margin-bottom: 50px;
+    }
+    #blocks {
+        width: 600px;
+        height: 300px;
+    }
+    .bodytitle {
+        font-size: 30px;
+    }
+    .bodyduration {
+        font-size: 15px;
+    }
+    .expbody {
+        font-size: 20px;
+    }
+}
